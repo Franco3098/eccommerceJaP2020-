@@ -3,7 +3,8 @@
 //elementos HTML presentes.
 var usuariosArray = [];
 
-function validarUsuario(array, userIn, passwordIn) {
+function validarUsuario(array, userIn, passwordIn) 
+{
    for (let i = 0; i < array.length; i++) {
        let usuario= array[i];
      if (usuario.email = userIn & usuario.password == passwordIn) {
@@ -35,7 +36,7 @@ document.getElementById("submitBtn").addEventListener("click", function(e) {
         }   
 });
    } else {
-       alert("se deben ingresar los datos")
+       alert("Deben ingresarse los datos.")
    }
 });
 });
