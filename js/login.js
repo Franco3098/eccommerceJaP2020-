@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", function (e) {
         }
         if (camposCompletos) {
             if (inputEmail.value, inputPassword.value) {
-                window.location = "index.html";
+                window.location = "inicio.html";
             }
             else {
                 alert("Usuario o contraseña incorrectos.");
