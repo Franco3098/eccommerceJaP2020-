@@ -1,45 +1,57 @@
-//Función que se ejecuta una vez que se haya lanzado el evento de
-//que el documento se encuentra cargado, es decir, se encuentran todos los
-//elementos HTML presentes.
 var productsArray = [];
 
-function showProductsList(array){
+function showProductsList(array) {
 
     let htmlContentToAppend = "";
-for (let i = 0; i < array.length; i++) {
-    let product = array[i];
+    for (let i = 0; i < array.length; i++) {
+        let product = array[i];
 
-    htmlContentToAppend += `
+        htmlContentToAppend += `
+        <div class="list-group-item list-group-item-action">
+            <div class="row">
+                <div class="col-3">
+                    <img src="` + product.imgSrc + `" alt="` + product.description + `" class="img-thumbnail">
+                </div>
+                <div class="col">
+                    <div class="d-flex w-100 justify-content-between">
+                        <h4 class="mb-1">`+ product.name +`</h4>
+                        <small class="text-muted">` + product.soldCount + ` artículos vendidos</small>
+                    </div>
+                    <p class="mb-1">` + product.description + `</p>
+                </div>
+            </div>
+        </div>
+        `
+    document.getElementById("listadecosos").innerHTML = htmlContentToAppend;
+}  
+}
+   /*   htmlContentToAppend += `
     <div class="list-group-item-action">
     <div class="row">
-    <div class="col-3"
+    <div class="col-3">
     <img src="` + product.imgSrc + `" alt="` + product.description + `" class="img-thumbnail">
     </div>
-    <dic class="col">
+    <div class="col">
     <div class="d-flex w-100 justify-content-between">
-    <div class="mb-1">
-    <h4>` + product.name + `</h4>
+    <h4  class="mb-1">` + product.name + `</h4>
     <p>` + product.description + `</p>
-    <p>` + product.cost + `</p>
-    <p>` + product.currency + `</p>
+    <p>` + product.currency + product.cost `</p>
+    <small class="text-muted">` + product.soldCount + ` articulos vendidos</small>
     </div>
-    <small class="text-muted">` + product.soldCount + `articulos</small>
-    </div>
-
     </div>
     </div>
     </div>
     `
 
-    document.getElementById("mod-1").innerHTML = htmlContentToAppend;
-}
+        document.getElementById("listadecosos").innerHTML = htmlContentToAppend; 
+    }}
+*/
+    document.addEventListener("DOMContentLoaded", function (e) {
+        getJSONData(PRODUCTS_URL).then(function (resultObj) {
+            if (resultObj.status === "ok") {
+                productsArray = resultObj.data;
 
-document.addEventListener("DOMContentLoaded", function (e) {
-    getJSONData(PRODUCT_URL).then(function (resultObj) {
-        if (resultObj.status === "ok") {
-            productsArray = resultObj.data;
-            
-            showProductsList(productsArray);
-        }
-    });
-})};
+                showProductsList(productsArray);
+            }
+        });
+}); 
