@@ -25,6 +25,9 @@ document.addEventListener("DOMContentLoaded", function (e) {
         }
         if (camposCompletos) {
             if (inputEmail.value, inputPassword.value) {
+
+                sessionStorage.setItem('Usuario-Logueado', JSON.stringify({ email: inputEmail.value}))
+         
                 window.location = "inicio.html";
             }
             else {
