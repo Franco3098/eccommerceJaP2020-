@@ -40,7 +40,7 @@ var getJSONData = function(url){
     });
 }
 document.addEventListener("DOMContentLoaded", function(e){
-  let userLogged = localStorage.getItem('Usuario-Logueado');
+  let userLogged = sessionStorage.getItem('Usuario-Logueado');
   let infoUser = document.getElementById("info-user")
   let user = document.getElementById("user");
 
@@ -51,7 +51,7 @@ document.addEventListener("DOMContentLoaded", function(e){
   }
 
   document.getElementById("salir").addEventListener("click", function(){
-    localStorage.removeItem('User-Logged');
+    sessionStorage.removeItem('Usuario-Logueado');
     window.location = 'inicio.html';
   })
 });

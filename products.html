@@ -23,6 +23,10 @@
       <a class="py-2 d-none d-md-inline-block" href="products.html">Productos</a>
       <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
       <a class="py-2 d-none d-md-inline-block" href="cart.html">Mi carrito</a>
+      <div id="info-user" style="display: none;">
+        <label id="user" class="py-2 d-none d-md-inline-block" style="color:white"></label> 
+        <button id="Salirlogin" class="btn btn-light">Salir</button>
+      </div>
     </div>
   </nav>
   <main role="main" class="pb-5">
@@ -34,14 +38,14 @@
       <div class="row">
         <div class="col text-right">
           <div class="btn-group btn-group-toggle mb-4" data-toggle="buttons">
-            <label class="btn btn-light active" id="sortAsc">
-              <input type="radio" name="options" autocomplete="off" checked>Mayor precio
+            <label class="btn btn-light active" id="sortascendente">
+              <input type="radio" number="options" autocomplete="off" checked>Mayor precio
             </label>
-            <label class="btn btn-light" id="sortDesc">
-              <input type="radio" name="options" autocomplete="off">Menor precio
+            <label class="btn btn-light" id="sortdescendente">
+              <input type="radio" number="options" autocomplete="off">Menor precio
             </label>
-            <label class="btn btn-light" id="sortByCount">
-              <input type="radio" name="options" autocomplete="off"><i class="fas fa-sort-amount-down mr-1"></i>Mas vendidos.
+            <label class="btn btn-light" id="sortByCost">
+              <input type="radio" number="options" autocomplete="off"><i class="fas fa-sort-amount-down mr-1"></i>Mas vendidos.
             </label>
           </div>
         </div>
