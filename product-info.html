@@ -29,15 +29,42 @@
       </div>
     </div>
   </nav>
-  <div class="container p-5">
-    <div class="alert alert-danger" role="alert" style="position: relative; width:auto; top: 0;">
-      <h4 class="alert-heading">¡A trabajar! :)</h4>
-      <p>Esta sección corresponde a: Entrega 3 (Fecha de entrega: 13/09/2020) y Entrega 4 (Fecha de entrega: 20/09/2020).</p>
-      <hr>
-      <p class="mb-0">Para saber qué debes hacer, fijate en la actividad en CREA correspondiente a esta entrega.</p>
-    </div>
+
+  <div class="verProducto">
+    <div id="contenido"></div>
+    <hr>
+    <div id="imagenes" class="img"></div>
+    <hr>
+    <a href="products.html"> ¿Quieres ver nuestra lista de productos?</a>
+    <hr>
+    
+    <i style="font-size:22px"> Quienes lo han comprado opinan que:</i>
+
+    <div id="comentarios"></div>
+    
+    <div id="nuevocommentcontent" style="display: none;">
+</div>
   </div>
-  <footer class="text-muted">
+    <p>¿Lo compraste? Contanos que te pareció!</p>
+    
+     <textarea id="nuevocomentario" rows="8" cols="80"></textarea>
+     
+     <p>Calificalo:</p>
+     
+     <select id="nuevacal">
+       <option>1</option>
+       <option>2</option>
+       <option>3</option>
+       <option>4</option>
+       <option>5</option>
+       </select>
+
+       <br><br>
+       <button id="enviarcomentario">Enviar</button>
+</div>
+      <hr>
+  
+      <footer class="text-muted">
     <div class="container">
       <p class="float-right">
         <a href="#">Volver arriba</a>
