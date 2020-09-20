@@ -82,7 +82,7 @@ function showrelatedProducts() {
       <div class="card m-2">
         <div class="no-gutters">
           <a href="product-info.html"></a>
-          <img class="rel-thumbnail" src="${product.imgSrc}">
+          <img class="img-thumbnail" src="${product.imgSrc}">
           <div class="info">
             <h5>${product.name}</h5>
             <p class="badge badge-light">${product.currency} ${product.cost}</p>
@@ -92,7 +92,7 @@ function showrelatedProducts() {
       `
       ;
     });
-  
+
     relProductsDiv.innerHTML = htmlRelProducts;
   }
       getJSONData(PRODUCTS_URL).then(function(resultObj){
