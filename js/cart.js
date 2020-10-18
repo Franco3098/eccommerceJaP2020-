@@ -1,4 +1,8 @@
-articulosArray = [];
+const CURRENCY_DOLLAR = 'USD';
+const CURRENCY_PESO = 'UYU';
+carritoArray = [];
+
+
 function calctotal() {
     let suma = 0;
     let subs = document.getElementsByClassName("subtotal")
@@ -83,9 +87,9 @@ function calcEnvio() {
 document.addEventListener("DOMContentLoaded", function (e) {
     getJSONData(CART_INFO_DOS).then(function (resultObj) {
         if (resultObj.status === "ok") {
-            articulosArray = resultObj.data.articles;
+            carritoArray = resultObj.data.articles;
 
-            showCartProducts(articulosArray);
+            showCartProducts(carritoArray);
 
             calcEnvio()
         }
