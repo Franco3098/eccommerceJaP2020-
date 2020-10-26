@@ -82,7 +82,26 @@ function calcEnvio() {
     `
     document.getElementById("totalEnvio").innerHTML = contenido;
 }
+function seleccionarPago() {
 
+    var pagos = document.getElementsByName("formaDpago");
+    for (var i = 0; i < pagos.length; i++) {
+        if (pagos[i].checked && (pagos[i].value == "1")) {
+            document.getElementById("PagoPorBanco").classList.add("d-none");
+            document.getElementById("idBanco").value = "";
+            document.getElementById("numeroCuenta").value = "";
+            document.getElementById("cardPayment").classList.remove("d-none");
+        } else if (pagos[i].checked && (pagos[i].value == "2")) {
+            document.getElementById("cardPayment").classList.add("d-none");
+            document.getElementById("NameCard").value = "";
+            document.getElementById("ExpDate").value = "";
+            document.getElementById("CardId").value = "";
+            document.getElementById("PassCard").value = "";
+            document.getElementById("PagoPorBanco").classList.remove("d-none");
+        }
+    }
+
+}
 
 document.addEventListener("DOMContentLoaded", function (e) {
     getJSONData(CART_INFO_DOS).then(function (resultObj) {
@@ -99,5 +118,58 @@ document.addEventListener("DOMContentLoaded", function (e) {
         elements[i].addEventListener("change", function () {
             calcEnvio()
         });
+    } let tipoPagos = document.getElementsByName("formaDpago");
+    for (var i = 0; i < tipoPagos.length; i++) {
+        tipoPagos[i].addEventListener("change", function () {
+            seleccionarPago(); 
+});
     }
+    let form = document.getElementsByClassName('needs-validation')[0];
+    form.addEventListener('submit', function (event) {
+        if (form.checkValidity() === false) {
+            event.preventDefault();
+            event.stopPropagation();
+        }
+        form.classList.add('was-validated');
+    });
+
+    let btnabrirmodaldatospago = document.getElementById("btnabrirmodaldatosdepago");
+    btnabrirmodaldatospago.addEventListener('click', function (e) {
+        let datosdeenvio = document.getElementById('datosdeenvio');
+        if (datosdeenvio.checkValidity() === false) {
+            e.preventDefault();
+            e.stopPropagation();
+        }
+        datosdeenvio.classList.add('was-validated');
+    });
+
+    let botonSubmitModalDatosPagos = document.getElementById("btnsubmitmodaldatospagos");
+    botonSubmitModalDatosPagos.addEventListener('click', function (event) {
+        let pagos = document.getElementsByName("formaDpago");
+
+    
+        let value = null;
+        for (var i = 0; i < pagos.length; i++) {
+            if (pagos[i].checked) {
+                value = pagos[i].value;
+                break;
+            }
+        } 
+        if (value != null && (value == "1" || value == "2")) {
+            let ;
+            if (value == "1") { 
+                formPayment = document.getElementById('formCardPayment');
+            } else if (value == "2") { 
+                formPayment = document.getElementById('PagoDePanco');
+            }
+
+            if (formPayment.checkValidity() === false) { 
+                event.preventDefault();
+                event.stopPropagation();
+            } else {
+                $('#modalDatosPagos').modal('hide');
+            }
+            formPayment.classList.add('was-validated');
+        }
+    });
 });
