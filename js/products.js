@@ -44,19 +44,19 @@ function showProductsList(array) {
             htmlContentToAppend += `
             <div class="col-lg-4 col-md-6 mb-4">
             <a href="product-info.html" class="list-group-item list-group-item-action">
-                <div class="card mb-4 shadow-sm">
+                <div class="shadow-lg p-3 mb-5 bg-white rounded">
                     <div class="card-img-top">
                         <img src="` + product.imgSrc + `" alt="` + product.description + `" class="img-thumbnail">
                     </div>  
-                    <div class="card-body">
+                    <div class="card-body text-secondary">
                         <div class="d-flex w-100 justify-content-between">
                             <h4 class="mb-1">` + '<strong>' + product.name + '</strong>' + `</h4>
                         </div>
-                        <p class="mb-1">`+ '<strong>Descripcion: </strong>' + product.description + `</p>
-                        <p class="mb-1">` + '<strong>Precio: </strong>' + product.cost + product.currency + `</p>
+                        <p class="mb-1">` + product.description + `</p>
+                        <p class="mb-1">` + product.cost + product.currency + `</p>
                     </div>
                     <div class="card-footer">
-                        <small class="text-muted">` + product.soldCount + ` Unidades vendidas</small>
+                        <small class="text-muted">` + product.soldCount + ` unidades vendidas</small>
                     </div>
                 </div>
             </a>
@@ -64,9 +64,9 @@ function showProductsList(array) {
     
     `
         }
-        }
-        document.getElementById("listadecosos").innerHTML = htmlContentToAppend;
     }
+    document.getElementById("listadecosos").innerHTML = htmlContentToAppend;
+}
 
 function sortAndShowProducts(sortCriteria, productsArray) {
     currentSortCriteria = sortCriteria;
@@ -79,26 +79,26 @@ function sortAndShowProducts(sortCriteria, productsArray) {
     showProductsList(currentProductsArray);
 }
 
-document.addEventListener("DOMContentLoaded", function(e){
-    getJSONData(PRODUCTS_URL).then(function(resultObj){
-        if (resultObj.status === "ok"){
+document.addEventListener("DOMContentLoaded", function (e) {
+    getJSONData(PRODUCTS_URL).then(function (resultObj) {
+        if (resultObj.status === "ok") {
             sortAndShowProducts(ORDER_ASC_BY_NUMBER, resultObj.data);
-           
+
             productsArray = resultObj.data;
 
             showProductsList(productsArray);
         }
     });
-    
-    document.getElementById("sortascendente").addEventListener("click", function(){
+
+    document.getElementById("sortascendente").addEventListener("click", function () {
         sortAndShowProducts(ORDER_ASC_BY_NUMBER);
     });
 
-    document.getElementById("sortdescendente").addEventListener("click", function(){
+    document.getElementById("sortdescendente").addEventListener("click", function () {
         sortAndShowProducts(ORDER_DESC_BY_NUMBER);
     });
 
-    document.getElementById("sortByCost").addEventListener("click", function(){
+    document.getElementById("sortByCost").addEventListener("click", function () {
         sortAndShowProducts(ORDER_BY_PROD_NUMBER);
     });
 

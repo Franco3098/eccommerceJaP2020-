@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+  
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -40,64 +41,64 @@
       <a class="py-2 d-none d-md-inline-block" href="products.html">Productos</a>
       <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
       <div id="info-user" class="dropdown" style="display: none;">
-        <button class="btn btn-info dropdown-toggle" type="button" id="user" data-toggle="dropdown" aria-haspopup="true"
-          aria-expanded="false">
+        <button id="user"  class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
+            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         </button>
         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-          <a class="dropdown-item" href="my-profile.html">Mi perfil</a>
-          <a class="dropdown-item" href="cart.html">Carrito</a>
-          <a class="dropdown-item" href="index.html" id="Salirlogin">Cerrar sesión</a>
+            <a class="dropdown-item" href="cart.html">Carrito</a>
+            <a class="dropdown-item" href="my-profile.html">Perfil</a>
+            <a id="salir" class="dropdown-item">Salir</a>
         </div>
       </div>
     </div>
   </nav>
-  <div class="container p-5">
+  <div class="container p-4 my-3 bg-dark text-white">
     <div class="container">
       <div class="">
-        <div class="text-center p-4">
+        <div class="justify-content-start">
           <h4 class="mb-3">Información personal</h4>
           <img class="rounded-circle" src="img/no-user.png" id="imgPerfil" alt="" width="200px" height="auto">
         </div>
         <div class="">
             </div>
           </div>
-          <div class="row justify-content-center">
+          <div class="row justify-content-start">
             <div class="col-8">
               <label for="Nombre">Nombre</label>
-              <input type="text" id="Nombre" placeholder="Nombre" value="" class="form-control">
+              <input type="text" id="Nombre" placeholder="Ingrese su nombre" value="" class="form-control">
             </div>
           </div>
 
-          <div class="row justify-content-center">
+          <div class="row justify-content-start">
             <div class="col-8">
               <label for="Apellido">Apellido</label>
-              <input type="text" id="Apellido" placeholder="Apellido" value="" class="form-control">
+              <input type="text" id="Apellido" placeholder="Ingrese su apellido" value="" class="form-control">
             </div>
           </div>
 
-          <div class="row justify-content-center">
+          <div class="row justify-content-start ">
             <div class="col-8">
               <label for="E-mail">E-mail</label>
-              <input type="email" id="Email" placeholder="E-mail" class="form-control" value="">
+              <input type="email" id="Email" placeholder="Ingrese su correo" class="form-control" value="">
             </div>
           </div>
 
-          <div class="row justify-content-center">
+          <div class="row justify-content-start ">
             <div class="col-8">
               <label for="Edad">Fecha de nacimiento</label>
               <input class="form-control" type="date" value="" id="Edad">
             </div>
           </div>
-          <div class="row justify-content-center">
+          <div class="row justify-content-start ">
             <div class="col-8">
               <label for="Telefono">Telefono</label>
-              <input type="text" placeholder="Telefono" id="Telefono" class="form-control" value=""><br>
+              <input type="text" placeholder="Ingrese su telefono" id="Telefono" class="form-control" value=""><br>
             </div>
           </div>
 
         </div>
-        <div class="row justify-content-center">
-          <button class="btn btn-primary btn-block col-8" id="Guardar">Guardar Cambios</button>
+        <div class="row justify-content-start ">
+          <button class="btn btn-secondary btn-lg btn-block col-8" id="Guardar">Guardar Cambios</button>
         </div>
       </div>
     </div>
