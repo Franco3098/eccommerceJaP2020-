@@ -42,28 +42,32 @@ function showProductsList(array) {
             ((maxCost == undefined) || (maxCost != undefined && parseInt(product.cost) <= maxCost))) {
 
             htmlContentToAppend += `
-        <div class="list-group-item list-group-item-action">
-            <div class="row">
-                <div class="col-3">
-                    <img src="` + product.imgSrc + `" alt="` + product.description + `" class="img-thumbnail">
-                </div>
-                <div class="col">
-                    <div class="d-flex w-100 justify-content-between">
-                        <h4 class="mb-1">`+ product.name + `</h4>
-                        <small class="text-muted">` + product.soldCount + ` artículos vendidos</small>
+            <div class="col-lg-4 col-md-6 mb-4">
+            <a href="product-info.html" class="list-group-item list-group-item-action">
+                <div class="card mb-4 shadow-sm">
+                    <div class="card-img-top">
+                        <img src="` + product.imgSrc + `" alt="` + product.description + `" class="img-thumbnail">
+                    </div>  
+                    <div class="card-body">
+                        <div class="d-flex w-100 justify-content-between">
+                            <h4 class="mb-1">` + '<strong>' + product.name + '</strong>' + `</h4>
+                        </div>
+                        <p class="mb-1">`+ '<strong>Descripcion: </strong>' + product.description + `</p>
+                        <p class="mb-1">` + '<strong>Precio: </strong>' + product.cost + product.currency + `</p>
                     </div>
-                    <p class="mb-1">` + product.description + `</p>
-                    <a href="product-info.html"><button style= float: right;">Ver producto</button></a><br><br>
-                    <br><br><br><br>
-                    <p class="mb-1">` + product.currency + " " +  product.cost +  `</p>
+                    <div class="card-footer">
+                        <small class="text-muted">` + product.soldCount + ` Unidades vendidas</small>
+                    </div>
                 </div>
-            </div>
+            </a>
         </div>
-        `
+    
+    `
+        }
         }
         document.getElementById("listadecosos").innerHTML = htmlContentToAppend;
     }
-}
+
 function sortAndShowProducts(sortCriteria, productsArray) {
     currentSortCriteria = sortCriteria;
 
