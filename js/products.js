@@ -5,7 +5,7 @@ var productsArray = [];
 var minCost = undefined;
 var maxCost = undefined;
 
-function sortProducts(criteria, array) {
+function sortProducts(criteria, array) { //segundo audio
     let result = [];
     if (criteria === ORDER_ASC_BY_NUMBER) {
         result = array.sort(function (a, b) {
@@ -33,7 +33,7 @@ function sortProducts(criteria, array) {
     return result;
 }
 
-function showProductsList(array) {
+function showProductsList(array) { // primer audio
     let htmlContentToAppend = "";
     for (let i = 0; i < array.length; i++) {
         let product = array[i];
@@ -79,7 +79,9 @@ function sortAndShowProducts(sortCriteria, productsArray) {
     showProductsList(currentProductsArray);
 }
 
-document.addEventListener("DOMContentLoaded", function (e) {
+
+
+document.addEventListener("DOMContentLoaded", function (e) { //primer audio
     getJSONData(PRODUCTS_URL).then(function (resultObj) {
         if (resultObj.status === "ok") {
             sortAndShowProducts(ORDER_ASC_BY_NUMBER, resultObj.data);
@@ -89,6 +91,8 @@ document.addEventListener("DOMContentLoaded", function (e) {
             showProductsList(productsArray);
         }
     });
+
+
 
     document.getElementById("sortascendente").addEventListener("click", function () {
         sortAndShowProducts(ORDER_ASC_BY_NUMBER);
@@ -101,6 +105,10 @@ document.addEventListener("DOMContentLoaded", function (e) {
     document.getElementById("sortByCost").addEventListener("click", function () {
         sortAndShowProducts(ORDER_BY_PROD_NUMBER);
     });
+
+
+    // filtrar por precio 
+
 
     document.getElementById("filtroporprecio").addEventListener("click", function () {
         minCost = document.getElementById("rangodepreciominimo").value;

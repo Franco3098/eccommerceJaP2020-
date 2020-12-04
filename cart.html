@@ -41,299 +41,313 @@
       <a class="py-2 d-none d-md-inline-block" href="products.html">Productos</a>
       <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
       <div class="dropdown" id="info-user" style="display: none;">
-        <button id="user"  class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
-            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <button id="user" class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
+          data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         </button>
         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-            <a class="dropdown-item" href="cart.html">Carrito</a>
-            <a class="dropdown-item" href="my-profile.html">Perfil</a>
-            <a id="salir" class="dropdown-item">Salir</a>
+          <a class="dropdown-item" href="cart.html">Carrito</a>
+          <a class="dropdown-item" href="my-profile.html">Perfil</a>
+          <a id="salir" class="dropdown-item">Salir</a>
         </div>
-    </div>    
+      </div>
   </nav>
 
-<section>
+  <section>
 
-  
-  <div class="row">
 
-    
-    <div class="col-lg-8">
+    <div class="row">
 
-    
-      <div class="mb-3">
-        <div class="pt-4 wish-list">
-          <div class="container p-5">
-            <div class="text-center p-4">
-      <h2>Compras (2 productos) </h2>
-    </div>
-    <div>
-      <table class="table table-striped table-bordered table-hover">
-        <thead class="thead-light">
-          <tr>
-            <th>#</th>
-            <th></th>
-            <th>Articulo</th>
-            <th>Precio</th>
-            <th>Cantidad</th>
-            <th>Precio total (USD)</th>
-          </tr>
-        </thead>
-        <tbody id="listado"></tbody>
-        <tfoot>
-          <tr>
-            <td colspan="5">Total a pagar:</td>
-            <td id="total"></td>
-          </tr>
-        </tfoot>
-      </table>
-      <div id="Compras">
-      </div>
-      <div id="envios">
-        <div id="envios" class="container p-5">
-          <form id="datosdenvio" class="needs-validation" novalidate>
-            <div>
-              <h5 class="text-center">Datos de envio</h5>
-              <div class="form-row">
-                <div class="col">
-                  <label for="fname"><i class="fa fa-user fa-2x"></i> Nombre completo</label>
-                  <input type="text" class="form-control datosEnvios" id="fname" name="firstname" placeholder="Juan Perez"
-                    required>
-                  <div class="invalid-feedback">
-                    Por favor, complete el campo
-                  </div><br>
-                </div>
-                <div class="col">
-                  <label for="email"><i class="fa fa-envelope fa-2x"></i> Email</label>
-                  <input type="text" class="form-control datosEnvios" id="email" name="email" placeholder="juanp@mail.com"
-                    required>
-                  <div class="invalid-feedback">
-                    Por favor, complete el campo
-                  </div><br>
-                </div>
+
+      <div class="col-lg-8">
+
+
+        <div class="mb-3">
+          <div class="pt-4 wish-list">
+            <div class="container p-5">
+              <div class="text-center p-4">
+                <h2>Compras (2 productos) </h2>
               </div>
-              <div class="form-row">
-              </div><br>
-              <div class="form-row">
-                <div class="col-lg-4">
-                  <label for="country"><i class="fa fa-globe fa-2x"></i> País</label>
-                  <select id="country" name="country" class="form-control datosEnvios" required>
-                    <option value="">Seleccione un país</option>
-                    <option value="Algeria">Algeria</option>
-                    <option value="Argentina">Argentina</option>
-                    <option value="Australia">Australia</option>
-                    <option value="Bolivia">Bolivia</option>
-                    <option value="Brazil">Brazil</option>
-                    <option value="Canada">Canada</option>
-                    <option value="Chile">Chile</option>
-                    <option value="China">China</option>
-                    <option value="Colombia">Colombia</option>ion>
-                    <option value="Costa Rica">Costa Rica</option>
-                    <option value="Croatia">Croatia</option>
-                    <option value="Cuba">Cuba</option>
-                    <option value="Dominica">Dominica</option>
-                    <option value="Dominican Republic">Dominican Republic</option>>
-                    <option value="Ecuador">Ecuador</option>
-                    <option value="Egypt">Egypt</option>
-                    <option value="El Salvador">El Salvador</option>
-                    <option value="Finland">Finland</option>
-                    <option value="France">France</option>
-                    <option value="Germany">Germany</option>
-                    <option value="Ghana">Ghana</option>
-                    <option value="Gibraltar">Gibraltar</option>
-                    <option value="Great Britain">Great Britain</option>
-                    <option value="Greece">Greece</option>
-                    <option value="Guatemala">Guatemala</op>
-                    <option value="Isle of Man">Isle of Man</option>
-                    <option value="Israel">Israel</option>
-                    <option value="Italy">Italy</option>
-                    <option value="Jamaica">Jamaica</option>
-                    <option value="Japan">Japan</option>n>
-                    <option value="Mexico">Mexico</option>
-                    <option value="Paraguay">Paraguay</option>
-                    <option value="Peru">Peru</option>
-                    <option value="Poland">Poland</option>
-                    <option value="Portugal">Portugal</option>
-                    <option value="Puerto Rico">Puerto Rico</option>
-                    <option value="Qatar">Qatar</option>
-                    <option value="South Africa">South Africa</option>
-                    <option value="Spain">Spain</option>
-                    <option value="Sweden">Sweden</option>
-                    <option value="Uganda">Uganda</option>
-                    <option value="United Kingdom">United Kingdom</option>
-                    <option value="United Arab Erimates">United Arab Emirates</option>
-                    <option value="United States of America">United States of America</option>
-                    <option value="Uraguay">Uruguay</option>
-                    <option value="Venezuela">Venezuela</option>
-                  </select>
-                  <div class="invalid-feedback">
-                    Por favor, complete el campo
-                  </div>
+              <div>
+                <table class="table table-striped table-bordered table-hover">
+                  <thead class="thead-light">
+                    <tr>
+                      <th>#</th>
+                      <th></th>
+                      <th>Articulo</th>
+                      <th>Precio</th>
+                      <th>Cantidad</th>
+                      <th>Precio total (USD)</th>
+                    </tr>
+                  </thead>
+                  <tbody id="listado"></tbody>
+                  <tfoot>
+                    <tr>
+                      <td colspan="5">Total a pagar:</td>
+                      <td id="total"></td>
+                    </tr>
+                  </tfoot>
+                </table>
+                <div id="Compras">
                 </div>
-                <div class="col-lg-5">
-                  <label for="address"><i class="fa fa-address-card-o fa-2x"></i> Direcciòn</label>
-                  <input type="text" class="form-control datosEnvios" id="address" name="address" placeholder="Direcciòn"
-                    required>
-                  <div class="invalid-feedback">
-                    Por favor, complete el campo
-                  </div><br>
-                </div>
-  
-  
-                <div class="col-lg-3">
-                  <label for="adressNumber"> <i class="fa fa-map-marker fa-2x"></i> Numero de Puerta</label>
-                  <input type="text" class="form-control datosEnvios" name="numberadress" id="adressNumber"
-                    placeholder="Ej: 1111/02" required>
-                  <div class="invalid-feedback">
-                    Por favor, complete el campo
-                  </div><br>
-                </div>
-              </div>
-            </div>
 
-        <h4>Envio</h4>
-        <input id="Normal" name="envio" type="radio" value="0" required="" checked="">
-        <label for="Normal">Normal (15 días, gratis)</label> <br>
-
-        <input id="Premium" name="envio" type="radio" value="15" required="">
-        <label for="Premium">Premium (7 dias, 15 USD)</label> <br>
-
-        <input id="Extra" name="envio" type="radio" value="30" required="">
-        <label for="Extra">Deluxe (4 días, 30 USD)</label> <br>
-      </div>
-      <br>
-      <div class="row">
-        <div class="col-lg-3"></div>
-        <div class="col-lg-6">
-          <button type="button" id="btnabrirmodaldatosdepago" class="btn btn-success btn-lg btn-block"
-            data-toggle="modal" data-target="#modalDatosPagos">
-            Metodo de pago
-          </button>
-        </div>
-        <div class="col-lg-3"></div>
-      </div>
-    </form>
-  </div>
-  <br>
-      <table class="table table-striped table-bordered table-hover">
-        <thead>
-          <th>Metodo de envio</th>
-          <th>Precio del envio</th>
-          <th>Total a pagar</th>
-        </thead>
-        <tbody id="totalEnvio"></tbody>
-      </table>
-    </div>
-    
-    <button class="btn btn-block btn-primary" data-toggle="modal" data-target="#modalPagar">Confirmar</button>
-    <div class="modal fade" id="modalDatosPagos" tabindex="-1" aria-labelledby="modalDatosPagosLabel"
-    aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h4 class="modal-title" id="modalDatosPagosLabel">Metodos de pago</h4>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-          <div>
-            <div class="">
-              <label for="CardInfo"><i class="fa fa-credit-card" aria-hidden="true"></i> Pago con
-                tarjeta</label>
-              <input type="radio" name="formaDpago" id="CardInfo" value="1" checked=""> <br>
-              <label for="BankInfo"><i class="fa fa-university" aria-hidden="true"></i> Transferencia
-                Bancaria</label>
-              <input type="radio" name="formaDpago" id="BankInfo" value="2"> <br>
-              <hr>
-              <div class="">
-                <div>
-                  <h5>Datos de pago</h5>
-
-                  <div id="cardPayment">
-                    <form id="formCardPayment" action="">
-                      <div class="icon-container">
-                        <i class="fa fa-cc-visa fa-2x"></i>
-                        <i class="fa fa-cc-amex fa-2x"></i>
-                        <i class="fa fa-cc-mastercard fa-2x"></i>
-                        <i class="fa fa-cc-discover fa-2x"></i>
-                      </div>
-                      <div class="form-row">
-                        <div class="col">
-                          <label for="NameCard"> Nombre del cliente</label>
-                          <input type="text" id="NameCard" class="form-control" placeholder="Juan Perez" required>
-                          <div class="invalid-feedback">
-                            Por favor, complete el campo
-                          </div><br>
+                
+                  
+                
+                     <form id="datosdenvio" class="needs-validation" novalidate>
+                      <div id="envios" class="container p-5">
+                      <div>
+                        <h5 class="text-center">Datos de envio</h5>
+                        <div class="form-row">
+                          <div class="col">
+                            
+                            <label for="fname"><i class="fa fa-user fa-2x"></i> Nombre completo</label>
+                            <input type="text" class="form-control datosEnvios" id="fname" name="firstname"
+                              placeholder="Juan Perez" required>
+                            <div class="invalid-feedback">
+                              Por favor, complete el campo
+                            </div><br>
+                          </div>
+                          <div class="col">
+                            
+                            <label for="email"><i class="fa fa-envelope fa-2x"></i> Correo Electronico</label>
+                            <input type="text" class="form-control datosEnvios" id="email" name="email"
+                              placeholder="juanp@mail.com" required>
+                            <div class="invalid-feedback">
+                              Por favor, complete el campo
+                            </div><br>
+                          </div>
                         </div>
-                        <div class="col">
-                          <label for="ExpDate"> Fecha de expiración</label>
-                          <input type="date" id="ExpDate" class="form-control" required>
-                          <div class="invalid-feedback">
-                            Por favor, complete el campo
-                          </div><br>
+                        <div class="form-row">
+                        </div><br>
+                        <div class="form-row">
+                          <div class="col-lg-4">
+                            
+                            <label for="country"><i class="fa fa-globe fa-2x"></i> País</label>
+                            <select id="country" name="country" class="form-control datosEnvios" required>
+                              <option selected disabled value=""> Selecciona tu país</option>
+                              <option value="Algeria">Algeria</option>
+                              <option value="Argentina">Argentina</option>
+                              <option value="Australia">Australia</option>
+                              <option value="Bolivia">Bolivia</option>
+                              <option value="Brazil">Brazil</option>
+                              <option value="Canada">Canada</option>
+                              <option value="Chile">Chile</option>
+                              <option value="China">China</option>
+                              <option value="Colombia">Colombia</option>ion>
+                              <option value="Costa Rica">Costa Rica</option>
+                              <option value="Croatia">Croatia</option>
+                              <option value="Cuba">Cuba</option>
+                              <option value="Dominica">Dominica</option>
+                              <option value="Dominican Republic">Dominican Republic</option>>
+                              <option value="Ecuador">Ecuador</option>
+                              <option value="Egypt">Egypt</option>
+                              <option value="El Salvador">El Salvador</option>
+                              <option value="Finland">Finland</option>
+                              <option value="France">France</option>
+                              <option value="Germany">Germany</option>
+                              <option value="Ghana">Ghana</option>
+                              <option value="Gibraltar">Gibraltar</option>
+                              <option value="Great Britain">Great Britain</option>
+                              <option value="Greece">Greece</option>
+                              <option value="Guatemala">Guatemala</op>
+                              <option value="Isle of Man">Isle of Man</option>
+                              <option value="Israel">Israel</option>
+                              <option value="Italy">Italy</option>
+                              <option value="Jamaica">Jamaica</option>
+                              <option value="Japan">Japan</option>n>
+                              <option value="Mexico">Mexico</option>
+                              <option value="Paraguay">Paraguay</option>
+                              <option value="Peru">Peru</option>
+                              <option value="Poland">Poland</option>
+                              <option value="Portugal">Portugal</option>
+                              <option value="Puerto Rico">Puerto Rico</option>
+                              <option value="Qatar">Qatar</option>
+                              <option value="South Africa">South Africa</option>
+                              <option value="Spain">Spain</option>
+                              <option value="Sweden">Sweden</option>
+                              <option value="Uganda">Uganda</option>
+                              <option value="United Kingdom">United Kingdom</option>
+                              <option value="United Arab Erimates">United Arab Emirates</option>
+                              <option value="United States of America">United States of America</option>
+                              <option value="Uraguay">Uruguay</option>
+                              <option value="Venezuela">Venezuela</option>
+                            </select>
+                            <div class="invalid-feedback">
+                              Por favor, complete el campo
+                            </div>
+                          </div>
+                          <div class="col-lg-5">
+                            
+                            <label for="address"><i class="fa fa-address-card-o fa-2x"></i> Dirección</label>
+                            <input type="text" class="form-control datosEnvios" id="address" name="address"
+                              placeholder="Direcciòn" required>
+                            <div class="invalid-feedback">
+                              Por favor, complete el campo
+                            </div><br>
+                          </div>
                         </div>
                       </div>
-                      <div class="form-row">
-                        <div class="col">
-                          <label for="CardId"> Numero de tarjeta</label>
-                          <input type="text" class="form-control" id="CardId" placeholder="1111-3333-5555-7777"
-                            required min="16" max="16">
-                          <div class="invalid-feedback">
-                            Por favor, complete el campo
-                          </div><br>
-                        </div>
-                        <div class="col">
-                          <label for="PassCard">CVV</label>
-                          <input type="password" class="form-control" id="PassCard" required placeholder="111">
-                          <div class="invalid-feedback">
-                            Por favor, complete el campo
-                          </div><br>
-                        </div>
-                      </div>
-                    </form>
-                  </div>
-                  <div id="PagoPorBanco" class="d-none">
-                    <form id="formaDpagoBanco" action="">
-                      <label for="idBanco">Elija su banco</label>
-                      <select name="Bancos" class="form-control" id="idBank" required>´
-                        <option value="">Seleccionar un banco</option>
-                        <option value="1">BROU</option>
-                        <option value="2">Itau</option>
-                        <option value="3">Santander</option>
-                      </select>
-                      <label for="numeroCuenta">Numero de cuenta</label>
-                      <input type="text" class="form-control" id="numeroCuenta" placeholder="Ej:54241781" min="1" required>
                       <br>
+                      <!-- Botón para abrir el modal -->
+                      
+                      <div class="row">
+                        <div class="col-lg-3"></div>
+                        <div class="col-lg-6">
+                          <button type="button" id="btnabrirmodaldatosdepago" class="btn btn-success btn-lg btn-block"
+                            data-toggle="modal" data-target="#modalDatosPagos">
+                            Metodo de pago
+                          </button>
+                        </div>
+                        <div class="col-lg-3"></div>
+                      </div>
                     </form>
+                  </div>
+
+                  <h4>Envio</h4>
+                  
+                  <input id="Normal" name="envio" type="radio" value="0" required="" checked="">
+                  <label for="Normal">Normal (15 días, gratis)</label> <br>
+
+                  <input id="Premium" name="envio" type="radio" value="15" required="">
+                  <label for="Premium">Premium (7 dias, 15 USD)</label> <br>
+
+                  <input id="Extra" name="envio" type="radio" value="30" required="">
+                  
+                  <label for="Extra">Deluxe (4 días, 30 USD)</label> <br>
+                </div>
+                <br>
+                <table class="table table-striped table-bordered table-hover">
+                  <thead>
+                    <th>Metodo de envio</th>
+                    <th>Precio del envio</th>
+                    <th>Total a pagar</th>
+                  </thead>
+                  <tbody id="totalEnvio"></tbody>
+                </table>
+              </div>
+
+              <div>
+              <button class="btn btn-block btn-primary" data-toggle="modal" data-target="#modalPagar">Confirmar</button>
+              </div>
+              
+              <!-- Modal (codigo de abajo) -->
+              
+              <div class="modal fade" id="modalDatosPagos" tabindex="-1" aria-labelledby="modalDatosPagosLabel"
+                aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h4 class="modal-title" id="modalDatosPagosLabel">Metodos de pago</h4>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body">
+                      <div>
+                        <div class="">
+                         
+                          <label for="CardInfo"><i class="fa fa-credit-card" aria-hidden="true"></i> Pago con
+                            tarjeta</label>
+                          <input type="radio" name="formaDpago" id="CardInfo" value="1" checked=""> <br>
+                          
+                          <label for="BankInfo"><i class="fa fa-university" aria-hidden="true"></i> Transferencia
+                            Bancaria</label>
+                          <input type="radio" name="formaDpago" id="BankInfo" value="2"> <br>
+                          <hr>
+                          <div class="">
+                            <div>
+                             
+                              <h5>Datos de pago</h5>
+
+                              <div id="cardPayment">
+                                <form id="formCardPayment" action="">
+                              </div>
+
+                              <div class="form-row">
+                                <div class="col">
+                                  <label for="NameCard"> Nombre del cliente</label>
+                                  <input type="text" id="NameCard" class="form-control" placeholder="Juan Perez"
+                                    required>
+                                  <div class="invalid-feedback">
+                                    Por favor, complete el campo
+                                  </div><br>
+                                </div>
+                                <div class="col">
+                                  <label for="ExpDate"> Fecha de expiración</label>
+                                  <input type="date" id="ExpDate" class="form-control" required>
+                                  <div class="invalid-feedback">
+                                    Por favor, complete el campo
+                                  </div><br>
+                                </div>
+                              </div>
+                              <div class="form-row">
+                                <div class="col">
+                                  <label for="CardId"> Numero de tarjeta</label>
+                                  <input type="text" class="form-control" id="CardId" placeholder="1111-3333-5555-7777"
+                                    required min="16" max="16">
+                                  <div class="invalid-feedback">
+                                    Por favor, complete el campo
+                                  </div><br>
+                                </div>
+                                <div class="col">
+                                  <label for="PassCard">CVV</label>
+                                  <input type="password" class="form-control" id="PassCard" required placeholder="111">
+                                  <div class="invalid-feedback">
+                                    Por favor, complete el campo
+                                  </div><br>
+                                </div>
+                              </div>
+                              <div class="modal-footer">
+                                <button id="btnsubmitmodaldepagos" type="submit" class="btn btn-success">Guardar
+                                  cambios</button>
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                              </div>
+                              </form>
+                            </div>
+                            <div id="PagoPorBanco" class="d-none">
+                              <form id="formaDpagoBanco" action="">
+                                <label for="idBanco">Elija su banco</label>
+                                <select name="Bancos" class="form-control" id="idBanco" required>´
+                                  <option value="">Seleccionar un banco</option>
+                                  <option value="1">BROU</option>
+                                  <option value="2">Itau</option>
+                                  <option value="3">Santander</option>
+                                </select>
+                                <label for="numeroCuenta">Numero de cuenta</label>
+                                <input type="text" class="form-control" id="numeroCuenta" placeholder="Ej:54241781"
+                                  min="1" required>
+                                <br>
+                                <div class="modal-footer">
+                                  <button id="btnsubmitmodaldepagos" type="submit" class="btn btn-success">Guardar
+                                    cambios</button>
+                                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                                </div>
+                              </form>
+                            </div>
+                          </div>
+                        </div>
+
+                      </div>
+
+                    </div>
                   </div>
                 </div>
               </div>
-
-            </div>
-            <div class="modal-footer">
-              <button id="btnsubmitmodaldepagos" type="submit" class="btn btn-success">Guardar cambios</button>
-              <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
             </div>
           </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  </div>
-  <div id="spinner-wrapper">
-    <div class="lds-ring">
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-    </div>
-  </div>
-  <script src="js/jquery-3.4.1.min.js"></script>
-  <script src="js/bootstrap.bundle.min.js"></script>
-  <script src="js/dropzone.js"></script>
-  <script src="js/init.js"></script>
-  <script src="js/cart.js"></script>
+          <div id="spinner-wrapper">
+            <div class="lds-ring">
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+            </div>
+          </div>
+          <script src="js/jquery-3.4.1.min.js"></script>
+          <script src="js/bootstrap.bundle.min.js"></script>
+          <script src="js/dropzone.js"></script>
+          <script src="js/init.js"></script>
+          <script src="js/cart.js"></script>
 </body>
 
 </html>

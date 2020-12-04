@@ -13,7 +13,7 @@ function calctotal() {
     calcEnvio();
 }
 
-function calcSubtotal(unitCost, i) {
+function calcSubtotal(unitCost, i) { //
 
     let count = parseInt(document.getElementById(`cantidad${i}`).value);
 
@@ -30,14 +30,14 @@ function checkCurrency(unitCost, currency) {
     }
 }
 
-function showCartProducts(array) {
+function showCartProducts(array) {  // voy recorriendo el array y los voy mostrando en una tabla
     let contenido = "";
 
     for (let i = 0; i < array.length; i++) {
         let product = array[i];
         let unitCostDolar = checkCurrency(product.unitCost, product.currency);
 
-        let sub = unitCostDolar * product.count;
+        let sub = unitCostDolar * product.count; // multiplico el precio por la cantidad y lo guardo en una variable
         contenido += `
             <tr>
                 <th>${i + 1}</th>
@@ -50,7 +50,7 @@ function showCartProducts(array) {
                 <td><input style="width:60px;" onchange="calcSubtotal(${unitCostDolar}, ${i})" 
                     type="number" id="cantidad${i}" value="${product.count}" min="1"></td>
                 
-                <td><span class="subtotal" id="productSubtotal${i}" style="font-weight:blod;">${sub}</td>
+                <td><span class="subtotal" id="productSubtotal${i}" style="font-weight:blod;">${sub}</td> 
             </tr>
         `
     }
@@ -86,18 +86,23 @@ function seleccionarPago() {
 
     var pagos = document.getElementsByName("formaDpago");
     for (var i = 0; i < pagos.length; i++) {
-        if (pagos[i].checked && (pagos[i].value == "1")) {
+
+        if (pagos[i].checked && (pagos[i].value) == "1") {
+
+            document.getElementById("cardPayment").classList.remove("d-none");
             document.getElementById("PagoPorBanco").classList.add("d-none");
             document.getElementById("idBanco").value = "";
             document.getElementById("numeroCuenta").value = "";
-            document.getElementById("cardPayment").classList.remove("d-none");
-        } else if (pagos[i].checked && (pagos[i].value == "2")) {
+
+
+
+        } else if (pagos[i].checked && (pagos[i].value) == "2") {
             document.getElementById("cardPayment").classList.add("d-none");
+            document.getElementById("PagoPorBanco").classList.remove("d-none");
             document.getElementById("NameCard").value = "";
             document.getElementById("ExpDate").value = "";
             document.getElementById("CardId").value = "";
             document.getElementById("PassCard").value = "";
-            document.getElementById("PagoPorBanco").classList.remove("d-none");
         }
     }
 
@@ -106,64 +111,75 @@ function seleccionarPago() {
 document.addEventListener("DOMContentLoaded", function (e) {
     getJSONData(CART_INFO_DOS).then(function (resultObj) {
         if (resultObj.status === "ok") {
-            carritoArray = resultObj.data.articles;
+            carritoArray = resultObj.data.articles;     // traigo los productos y los guardo en un array.
 
-            showCartProducts(carritoArray);
+            showCartProducts(carritoArray);             // después llamo a la función mostrar libros con ese array
 
             calcEnvio()
         }
     });
-    let elements = document.getElementsByName("envio");
+
+
+    let elements = document.getElementsByName("envio");  //funcion para los radio button's de envio
     for (var i = 0; i < elements.length; i++) {
         elements[i].addEventListener("change", function () {
             calcEnvio()
         });
+
+
+
     } let tipoPagos = document.getElementsByName("formaDpago");
     for (var i = 0; i < tipoPagos.length; i++) {
         tipoPagos[i].addEventListener("change", function () {
-            seleccionarPago(); 
-});
+            seleccionarPago();
+
+
+        });
     }
     let form = document.getElementsByClassName('needs-validation')[0];
     form.addEventListener('submit', function (event) {
+
         if (form.checkValidity() === false) {
-            event.preventDefault();
-            event.stopPropagation();
+            e.preventDefault();                 // se encarga de la validación del formulario //
+            e.stopPropagation();
+
+            form.classList.add('was-validated');
         }
-        form.classList.add('was-validated');
     });
 
-    let btnabrirmodaldatospago = document.getElementById("btnabrirmodaldatosdepago");
-    btnabrirmodaldatospago.addEventListener('click', function (e) {
-        let datosdeenvio = document.getElementById('datosdeenvio');
-        if (datosdeenvio.checkValidity() === false) {
+
+    let btnabrirmodaldatosdepago = document.getElementById("btnabrirmodaldatosdepago");
+    btnabrirmodaldatosdepago.addEventListener('click', function (e) {
+        let datosdenvio = document.getElementById('datosdenvio');
+        if (datosdenvio.checkValidity() === false) {
             e.preventDefault();
             e.stopPropagation();
+
+            datosdenvio.classList.add('was-validated');
         }
-        datosdeenvio.classList.add('was-validated');
     });
 
-    let botonSubmitModalDatosPagos = document.getElementById("btnsubmitmodaldatospagos");
-    botonSubmitModalDatosPagos.addEventListener('click', function (event) {
+    let btnsubmitmodaldatospagos = document.getElementById("btnsubmitmodaldatospagos");
+    btnsubmitmodaldatospagos.addEventListener('click', function (event) {
         let pagos = document.getElementsByName("formaDpago");
 
-    
+
         let value = null;
         for (var i = 0; i < pagos.length; i++) {
             if (pagos[i].checked) {
                 value = pagos[i].value;
                 break;
             }
-        } 
+        }
         if (value != null && (value == "1" || value == "2")) {
-            let ;
-            if (value == "1") { 
+            let formPayment;
+            if (value == "1") {
                 formPayment = document.getElementById('formCardPayment');
-            } else if (value == "2") { 
-                formPayment = document.getElementById('PagoDePanco');
+            } else if (value == "2") {
+                formPayment = document.getElementById('PagoDeBanco');
             }
 
-            if (formPayment.checkValidity() === false) { 
+            if (formPayment.checkValidity() === false) {
                 event.preventDefault();
                 event.stopPropagation();
             } else {
